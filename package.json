@@ -1,0 +1,57 @@
+{
+  "name": "spotify-app",
+  "version": "1.0.0",
+  "description": "A player using the spotify-wrapper lib.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test",
+    "start": "./node_modules/.bin/webpack-dev-server --open"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "excludes": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bilusca/spotify-app.git"
+  },
+  "keywords": [
+    "lib",
+    "spotify-wrapper"
+  ],
+  "author": "Lucas Assis Vieira <lucasav2005@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bilusca/spotify-app/issues"
+  },
+  "homepage": "https://github.com/Bilusca/spotify-app#readme",
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "jsdom": "^11.3.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^4.0.1",
+    "nyc": "^11.2.1",
+    "webpack": "^3.7.1",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+    "spotify-wrapper": "^2.0.2"
+  }
+}
